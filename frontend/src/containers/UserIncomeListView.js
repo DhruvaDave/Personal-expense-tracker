@@ -15,6 +15,7 @@ class UserIncomeList extends React.Component {
         axios.get('http://127.0.0.1:8000/user-income/')
         .then(res => {
             console.log("-------res.data------",res.data);
+            console.log("------localStorage---------______",localStorage);
                 this.setState({
                     user_incomes: res.data
                 });

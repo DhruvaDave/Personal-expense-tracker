@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import UserIncome, UserExpenses
+from .models import UserIncome
 
 # Register your models here.
 
@@ -15,4 +15,4 @@ class UserIncomeAdmin(admin.ModelAdmin):
         super(UserIncome, self).save_model(request, obj, form, change)
 
 admin.site.register(UserIncome)
-admin.site.register(UserExpenses)
+# admin.site.register(UserExpenseData)

@@ -1,11 +1,11 @@
-from user_income.api.views import UserIncomeViewSet, UserExpensesViewSet
+from user_income.api.views import UserIncomeViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 
 print("---router---",router)
 router.register(r'', UserIncomeViewSet, basename='user-income')
-# expenses_router.register(r'expenses', UserExpensesViewSet, basename='user-expenses')
+# expenses_router.register(r'expenses', UserExpenseDataViewSet, basename='user-expenses')
 urlpatterns = router.urls 
 print("-----urlpatterns-------",urlpatterns)
 

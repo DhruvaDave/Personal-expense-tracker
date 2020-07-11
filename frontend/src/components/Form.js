@@ -71,23 +71,24 @@ class CustomForm extends React.Component {
     render() {
         return (
         <div>
+            
             {/* HTMLFormControlsCollection(4) [input.ant-calendar-picker-input.ant-input, 
             input.ant-calendar-picker-input.ant-input, input.ant-input, 
             button.ant-btn.ant-btn-primary.ant-btn-clicked, 
             credit: input.ant-input] */}
+                {/* <Input name="from_date" style={{ width: '50%' }} defaultValue="input content" /> */}
+                {/* <Input name="to_date" style={{ width: '50%' }} defaultValue="input content" /> */}
             <Form onSubmit={(event) => this.handleFormSubmit(
                 event,
                 this.props.requestType,
                 this.props.userIncomeID )}>
             <FormItem label="From Date">
                 <Input.Group compact>
-                    {/* <Input name="from_date" style={{ width: '50%' }} defaultValue="input content" /> */}
                     <DatePicker name="from_date" onChange={this.onChangeFromDate} style={{ width: '30%' }} />
                 </Input.Group>
             </FormItem>
             <FormItem label="To Date" >
                 <Input.Group compact>
-                    {/* <Input name="to_date" style={{ width: '50%' }} defaultValue="input content" /> */}
                     <DatePicker name="to_date" onChange={this.onChangeToDate} style={{ width: '30%' }} />
                 </Input.Group>
             </FormItem>

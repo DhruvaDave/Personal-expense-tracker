@@ -45,7 +45,9 @@ export const authLogin = (username, password) => {
             password: password 
         })
         .then(res => {
+            console.log("-----auth----res.data",res);
             const token = res.data.key;
+            // user = User.objects.filter(user=serializer.instance)
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000); // 1 hour
             localStorage.setItem('token', token);
             localStorage.setItem('expirationDate', expirationDate);
@@ -68,6 +70,7 @@ export const authSignup = (username, email, password1, password2) => {
             password2: password2
         })
         .then(res => {
+            console.log("-----auth----res.data",res.data);
             const token = res.data.key;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000); // 1 hour
             localStorage.setItem('token', token);

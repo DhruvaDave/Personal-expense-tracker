@@ -31,8 +31,8 @@ const UserIncomes = (props) => {
         >
             <List.Item.Meta
             // avatar={<Avatar src={item.avatar} />}
-            title={<a href={`/${item.id}`}>{item.user_id}</a>}
-            description={<a href={`/${item.id}`}>{item.from_date} to {item.to_date}</a>}
+            title={<a href={`/user-income/${item.id}`}>{item.user_id}</a>}
+            description={<a href={`/user-income/${item.id}`}>{item.from_date} to {item.to_date}</a>}
             // user_id={item.user_id}
             />
             {item.content}

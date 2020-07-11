@@ -42,9 +42,15 @@ class CustomLayout extends React.Component {
                     }
 
                 <Menu.Item key="3">
-                <Link to="/user-expenses">
-                    User Expenses
-                </Link>
+                    <Link to="/user-income">
+                        User Income
+                    </Link>
+                </Menu.Item>
+                
+                <Menu.Item key="4">
+                    <Link to="/user-expenses">
+                        User Expenses
+                    </Link>
                 </Menu.Item>
                 
                 </Menu>

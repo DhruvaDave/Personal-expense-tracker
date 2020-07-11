@@ -6,6 +6,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'allauth',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -14,7 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django.contrib.sites',
-    'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'corsheaders',
@@ -25,6 +25,8 @@ INSTALLED_APPS = [
 
     'articles',
     'user_income',
+    'user_expense',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +73,26 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
+    # 'default': {
+    #     'ENGINE': 'djongo',
+    #     'NAME': 'personal_expense_tracker',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '27017',
+
+    #     'NAME': 'your-db-name',
+    #     'HOST': 'mongodb+srv://dhruva:9427892397@cluster0-e8e2r.mongodb.net/GOT?retryWrites=true&w=majority',
+    #     'PORT': port_number,
+    #     # 'USER': 'db-username',
+    #     # 'PASSWORD': 'password',
+    #     # 'AUTH_SOURCE': 'db-name',
+    #     'AUTH_MECHANISM': 'SCRAM-SHA-1',
+    # }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -93,9 +114,14 @@ SITE_ID = 1
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'rest_framework.permissions.AllowAny'
+        'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     )
+}
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'TOKEN_SERIALIZER': 'users.api.serializers.TokenSerializer'
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -103,3 +129,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_USERNAME_REQUIRED = False
+# ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = False
+# ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/'
+
+
+# https://github.com/justdjango/DjReact

@@ -5,7 +5,7 @@ import { Button, Card } from 'antd';
 
 import CustomForm from '../components/Form';
 
-class ArticleDetail extends React.Component {
+class UserIncomeDetail extends React.Component {
 
     state = {
         article: {}
@@ -13,6 +13,7 @@ class ArticleDetail extends React.Component {
 
     componentDidMount() {
         const userIncomeID = this.props.match.params.userIncomeID;
+        console.log("------localStorage---------______",localStorage);
         axios.get(`http://127.0.0.1:8000/user-income/${userIncomeID}`)
             .then(res => {
                 this.setState({
@@ -46,4 +47,4 @@ class ArticleDetail extends React.Component {
     }
 }
 
-export default ArticleDetail;
+export default UserIncomeDetail;
