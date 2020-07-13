@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'user_income',
     'user_expense',
     'users',
+    'user_calculation',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,30 @@
+<p> HERER </p>
+
+<div class="container">
+    <ul class="list-group">
+            {% for l in all_user_expenses %}
+				<li class="list-group-item"><h3>{{l.user_id.username}}</h3></li>
+				<li class="list-group-item">{{l.user_income_id.from_date}} - {{l.user_income_id.to_date}}</li>
+				<li class="list-group-item">{{l.amount}}</li>
+            {% endfor %}
+
+    </ul>
+
+    
+    <table border="3">
+
+        {% for author, values in timeline_with_income.items %}
+        <tr>
+            <td>{{author}}</td>
+            <td>{{author.credit}}</td>
+            {% for v in values %}
+                <td>{{v}}</td>
+            {% endfor %}
+            <!-- <td>{{values}}</td> -->
+
+
+            <!-- <td>{{author.creditvalues}}</td> -->
+        </tr>
+        {% endfor %}
+    </table>
+</div>

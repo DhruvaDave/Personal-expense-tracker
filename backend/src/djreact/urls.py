@@ -10,6 +10,7 @@ urlpatterns = [
 
     path('user-income/', include('user_income.api.urls')),
     path('all-users/', include('users.api.urls')),
+    path('', include('user_calculation.urls')),
     # path('all/msg',views.all_msg,name="all_msg"),
     # path('api/', include('articles.api.urls')),
 ]

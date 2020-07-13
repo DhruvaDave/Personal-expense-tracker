@@ -52,6 +52,12 @@ class CustomLayout extends React.Component {
                         User Expenses
                     </Link>
                 </Menu.Item>
+
+                <Menu.Item key="4">
+                    <Link to="http://127.0.0.1:8000/user_exp/calculation">
+                        Calculation
+                    </Link>
+                </Menu.Item>
                 
                 </Menu>
                 </Header>
