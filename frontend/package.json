@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.7.3",
     "axios": "^0.18.0",
+    "prettier": "^2.0.5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -22,5 +23,6 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
+  "devDependencies": {},
   "description": ""
 }
