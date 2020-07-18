@@ -4,6 +4,7 @@ import axios from "axios";
 // import Articles from '../components/Article';
 import UserExpenses from "../components/UserExpenses";
 import ExpenseCustomForm from "../components/ExpenseForm";
+import {serverUrl} from "../backend_route";
 
 class UserExpensesList extends React.Component {
 	state = {
@@ -11,7 +12,7 @@ class UserExpensesList extends React.Component {
 	};
 
 	componentDidMount() {
-		axios.get("http://127.0.0.1:8000/user-expenses/").then((res) => {
+		axios.get(`${serverUrl}/user-expenses/`).then((res) => {
 			console.log("-------res.data--1111----", res.data);
 			this.setState({
 				user_expenses: res.data,

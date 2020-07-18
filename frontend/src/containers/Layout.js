@@ -2,6 +2,8 @@ import React from "react";
 import { Layout, Menu, Breadcrumb } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import {serverUrl} from "../backend_route";
+
 
 import * as actions from "../store/actions/auth";
 
@@ -40,11 +42,11 @@ class CustomLayout extends React.Component {
 							<Link to="/user-expenses">User Expenses</Link>
 						</Menu.Item>
 
-						<Menu.Item key="4">
+						{/* <Menu.Item key="4">
 							<Link to="http://127.0.0.1:8000/user_exp/calculation">
 								Calculation
 							</Link>
-						</Menu.Item>
+						</Menu.Item> */}
 					</Menu>
 				</Header>
 				<Content style={{ padding: "0 50px" }}>

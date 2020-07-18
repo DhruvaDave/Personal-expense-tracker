@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import {serverUrl} from "../backend_route";
 
 import { Button, Card } from "antd";
 
@@ -13,7 +14,7 @@ class UserExpensesDetail extends React.Component {
 	componentDidMount() {
 		const userExpenseID = this.props.match.params.userExpenseID;
 		axios
-			.get(`http://127.0.0.1:8000/user-expenses/${userExpenseID}`)
+			.get(`${serverUrl}/user-expenses/${userExpenseID}`)
 			.then((res) => {
 				this.setState({
 					expense: res.data,
@@ -23,7 +24,7 @@ class UserExpensesDetail extends React.Component {
 
 	handleDelete = (event) => {
 		const userExpenseID = this.props.match.params.userExpenseID;
-		axios.delete(`http://127.0.0.1:8000/user-expenses/${userExpenseID}`);
+		axios.delete(`${serverUrl}/user-expenses/${userExpenseID}`);
 		this.props.history.push("/");
 		this.forceUpdate();
 	};

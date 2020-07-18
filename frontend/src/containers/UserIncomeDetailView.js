@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import {serverUrl} from "../backend_route";
 
 import { Button, Card } from "antd";
 
@@ -14,7 +15,7 @@ class UserIncomeDetail extends React.Component {
 		const userIncomeID = this.props.match.params.userIncomeID;
 		console.log("------localStorage---------______", localStorage);
 		axios
-			.get(`http://127.0.0.1:8000/user-income/${userIncomeID}`)
+			.get(`${serverUrl}/user-income/${userIncomeID}`)
 			.then((res) => {
 				this.setState({
 					article: res.data,
@@ -24,7 +25,7 @@ class UserIncomeDetail extends React.Component {
 
 	handleDelete = (event) => {
 		const userIncomeID = this.props.match.params.userIncomeID;
-		axios.delete(`http://127.0.0.1:8000/user-income/${userIncomeID}`);
+		axios.delete(`${serverUrl}/user-income/${userIncomeID}`);
 		this.props.history.push("/");
 		this.forceUpdate();
 	};

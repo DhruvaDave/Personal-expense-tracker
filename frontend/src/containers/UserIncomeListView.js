@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import {serverUrl} from "../backend_route";
 
 // import Articles from '../components/Article';
 import UserIncomes from "../components/UserIncome";
@@ -11,7 +12,7 @@ class UserIncomeList extends React.Component {
 	};
 
 	componentDidMount() {
-		axios.get("http://127.0.0.1:8000/user-income/").then((res) => {
+		axios.get(`${serverUrl}/user-income/`).then((res) => {
 			console.log("-------res.data------", res.data);
 			console.log("------localStorage---------______", localStorage);
 			this.setState({

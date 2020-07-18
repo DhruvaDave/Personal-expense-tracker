@@ -1,6 +1,8 @@
 import React from "react";
 import { Form, Input, Button, DatePicker, Select } from "antd";
 import moment from "moment";
+import {serverUrl} from "../backend_route";
+
 
 import axios from "axios";
 
@@ -18,13 +20,13 @@ class ExpenseCustomForm extends React.Component {
 	};
 
 	componentDidMount() {
-		axios.get("http://127.0.0.1:8000/all-users/").then((res) => {
+		axios.get(`${serverUrl}/all-users/`).then((res) => {
 			console.log("-------res.data--1111----", res.data);
 			this.setState({
 				all_users: res.data,
 			});
 		});
-		axios.get("http://127.0.0.1:8000/user-income/").then((res) => {
+		axios.get(`${serverUrl}/user-income/`).then((res) => {
 			console.log("-------res.data--user_income----", res.data);
 			this.setState({
 				all_user_income: res.data,
@@ -55,7 +57,7 @@ class ExpenseCustomForm extends React.Component {
 				//     console.log("isAfter--------",isAfter);
 				// }
 				return axios
-					.post("http://127.0.0.1:8000/user-expenses/", {
+					.post(`${serverUrl}/user-expenses/`, {
 						from_date: from_date,
 						type_of_expense: type_of_expense,
 						amount: amount,
@@ -66,7 +68,7 @@ class ExpenseCustomForm extends React.Component {
 					.catch((error) => console.err(error));
 			case "put":
 				return axios
-					.put(`http://127.0.0.1:8000/user-expenses/${userExpensesID}/`, {
+					.put(`${serverUrl}/user-expenses/${userExpensesID}/`, {
 						from_date: from_date,
 						type_of_expense: type_of_expense,
 						amount: amount,

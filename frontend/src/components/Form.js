@@ -2,6 +2,8 @@ import React from "react";
 import { Form, Input, Button, DatePicker } from "antd";
 
 import axios from "axios";
+import {serverUrl} from "../backend_route";
+
 
 const FormItem = Form.Item;
 
@@ -33,7 +35,7 @@ class CustomForm extends React.Component {
 		switch (requestType) {
 			case "post":
 				return axios
-					.post("http://127.0.0.1:8000/user-income/", {
+					.post(`${serverUrl}/user-income/`, {
 						from_date: from_date,
 						to_date: to_date,
 						credit: credit,
@@ -43,7 +45,7 @@ class CustomForm extends React.Component {
 					.catch((error) => console.err(error));
 			case "put":
 				return axios
-					.put(`http://127.0.0.1:8000/user-income/${userIncomeID}/`, {
+					.put(`${serverUrl}/user-income/${userIncomeID}/`, {
 						from_date: from_date,
 						to_date: to_date,
 						credit: credit,
