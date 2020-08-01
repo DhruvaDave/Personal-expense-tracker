@@ -6,11 +6,11 @@ from django.urls import path
 router = DefaultRouter()
 
 router = DefaultRouter()
-print("---router---",router)
+# print("---router---",router)
 
 router.register('', UserExpenseDataViewSet, basename='user-expenses')
 urlpatterns = router.urls 
-print("-----urlpatterns----UserExpenseDataViewSet---",urlpatterns)
+# print("-----urlpatterns----UserExpenseDataViewSet---",urlpatterns)
 
 # from django.urls import path
 

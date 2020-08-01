@@ -3,11 +3,11 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 
-print("---router---",router)
+# print("---router---",router)
 router.register(r'', UserIncomeViewSet, basename='user-income')
 # expenses_router.register(r'expenses', UserExpenseDataViewSet, basename='user-expenses')
 urlpatterns = router.urls 
-print("-----urlpatterns-------",urlpatterns)
+# print("-----urlpatterns-------",urlpatterns)
 
 # from django.urls import path
 

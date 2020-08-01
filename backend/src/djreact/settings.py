@@ -115,14 +115,15 @@ SITE_ID = 1
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'rest_framework.permissions.AllowAny'
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     )
 }
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-    'TOKEN_SERIALIZER': 'users.api.serializers.TokenSerializer'
+    'TOKEN_SERIALIZER': 'users.api.serializers.TokenSerializer',
+    # 'LOGIN_SERIALIZER': 'users.api.serializers.LoginSerializer',
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
